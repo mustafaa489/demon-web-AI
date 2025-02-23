@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Demon - Premium Code Resources</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        let darkMode = localStorage.getItem('darkMode');
+        const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+        const enableDarkMode = () => {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('darkMode', 'enabled');
+        };
+
+        const disableDarkMode = () => {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('darkMode', null);
+        };
+
+        if (darkMode === 'enabled') {
+            enableDarkMode();
+        }
+
+        function toggleDarkMode() {
+            darkMode = localStorage.getItem('darkMode');
+            if (darkMode !== 'enabled') {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        }
+
+        if (localStorage.getItem('darkMode') === 'true' ||
+            (!('darkMode' in localStorage) && 
+             window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</head>
+<body class="bg-background dark:bg-dark-background text-foreground dark:text-dark-foreground font-inter transition-colors duration-200">
+    <nav class="bg-card dark:bg-dark-card shadow-sm transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-8 w-auto" src="images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=50" alt="Code Demon Logo">
+                    <span class="ml-2 text-xl font-bold text-primary dark:text-dark-primary">Code Demon</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <button onclick="toggleDarkMode()" class="p-2 rounded-md bg-secondary dark:bg-dark-secondary text-secondary-foreground dark:text-dark-secondary-foreground hover:bg-secondary/80 dark:hover:bg-dark-secondary/80 transition-all duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        </button>
+                        <a href="#" class="text-primary-foreground dark:text-dark-primary-foreground hover:bg-primary dark:hover:bg-dark-primary px-3 py-2 rounded-md">Home</a>
+                        <a href="#" class="text-foreground dark:text-dark-foreground hover:bg-primary hover:text-primary-foreground dark:hover:bg-dark-primary dark:hover:text-dark-primary-foreground px-3 py-2 rounded-md">Languages</a>
+                        <a href="#" class="text-foreground dark:text-dark-foreground hover:bg-primary hover:text-primary-foreground dark:hover:bg-dark-primary dark:hover:text-dark-primary-foreground px-3 py-2 rounded-md">Resources</a>
+                        <button class="bg-accent dark:bg-dark-accent text-accent-foreground dark:text-dark-accent-foreground px-4 py-2 rounded-md hover:bg-accent/90 dark:hover:bg-dark-accent/90">Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="transition-colors duration-200">
+        <section class="bg-secondary dark:bg-dark-secondary py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold text-secondary-foreground dark:text-dark-secondary-foreground mb-6">Learn Programming Languages</h1>
+                    <p class="text-xl text-secondary-foreground/80 dark:text-dark-secondary-foreground/80 mb-8">Master the most popular programming languages with our comprehensive resources</p>
+                    <div class="max-w-2xl mx-auto">
+                        <div class="flex items-center bg-card dark:bg-dark-card rounded-lg shadow-sm">
+                            <input type="text" placeholder="Search programming languages..." class="w-full px-4 py-3 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary dark:bg-dark-card dark:text-dark-card-foreground">
+                            <button class="bg-primary dark:bg-dark-primary text-primary-foreground dark:text-dark-primary-foreground px-6 py-3 rounded-r-lg hover:bg-primary/90 dark:hover:bg-dark-primary/90">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Programming Languages</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-card dark:bg-dark-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="images.unsplash.com/photo-1621839673705-6617adf9e890?auto=format&fit=crop&q=80&w=100" alt="HTML5" class="w-12 h-12 rounded-full">
+                            <h3 class="ml-4 text-xl font-semibold">HTML5</h3>
+                        </div>
+                        <p class="text-foreground/80 mb-4">Modern web structure and semantics</p>
+                        <span class="text-accent font-semibold">200+ resources</span>
+                    </div>
+                    <div class="bg-card dark:bg-dark-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&q=80&w=100" alt="CSS3" class="w-12 h-12 rounded-full">
+                            <h3 class="ml-4 text-xl font-semibold">CSS3</h3>
+                        </div>
+                        <p class="text-foreground/80 mb-4">Styling and animations</p>
+                        <span class="text-accent font-semibold">180+ resources</span>
+                    </div>
+                    <div class="bg-card dark:bg-dark-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&q=80&w=100" alt="JavaScript" class="w-12 h-12 rounded-full">
+                            <h3 class="ml-4 text-xl font-semibold">JavaScript</h3>
+                        </div>
+                        <p class="text-foreground/80 mb-4">Dynamic web functionality</p>
+                        <span class="text-accent font-semibold">250+ resources</span>
+                    </div>
+                    <div class="bg-card dark:bg-dark-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=100" alt="Lua" class="w-12 h-12 rounded-full">
+                            <h3 class="ml-4 text-xl font-semibold">Lua</h3>
+                        </div>
+                        <p class="text-foreground/80 mb-4">Game development & scripting</p>
+                        <span class="text-accent font-semibold">100+ resources</span>
+                    </div>
+                </div>
+                <div class="mt-16 bg-card dark:bg-dark-card rounded-lg p-8 shadow-md">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Language Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-secondary dark:bg-dark-secondary">
+                                <tr>
+                                    <th class="px-6 py-3 text-left">Language</th>
+                                    <th class="px-6 py-3 text-left">Type</th>
+                                    <th class="px-6 py-3 text-left">Use Case</th>
+                                    <th class="px-6 py-3 text-left">Difficulty</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-secondary dark:divide-dark-secondary">
+                                <tr>
+                                    <td class="px-6 py-4">HTML5</td>
+                                    <td class="px-6 py-4">Markup</td>
+                                    <td class="px-6 py-4">Web Structure</td>
+                                    <td class="px-6 py-4">Beginner</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4">CSS3</td>
+                                    <td class="px-6 py-4">Style Sheet</td>
+                                    <td class="px-6 py-4">Web Design</td>
+                                    <td class="px-6 py-4">Intermediate</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4">JavaScript</td>
+                                    <td class="px-6 py-4">Programming</td>
+                                    <td class="px-6 py-4">Web Functionality</td>
+                                    <td class="px-6 py-4">Advanced</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4">Lua</td>
+                                    <td class="px-6 py-4">Programming</td>
+                                    <td class="px-6 py-4">Game Development</td>
+                                    <td class="px-6 py-4">Intermediate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-secondary dark:bg-dark-secondary mt-20 py-12 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About Code Demon</h4>
+                    <p class="text-secondary-foreground/80">Premium code resources for developers</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-primary">Languages</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-primary">Resources</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-primary">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-primary">Help Center</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-primary">Documentation</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <div class="flex">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary dark:bg-dark-card dark:text-dark-card-foreground">
+                        <button class="bg-primary dark:bg-dark-primary text-primary-foreground dark:text-dark-primary-foreground px-4 py-2 rounded-r-md hover:bg-primary/90 dark:hover:bg-dark-primary/90">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
